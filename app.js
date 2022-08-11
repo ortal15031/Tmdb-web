@@ -9,7 +9,7 @@ get flag(){ return this._flag }
 set flag(flag_val){ this._flag = flag_val }
 getNewStyle(){this._id.className="newStyle"}
 getOldStyle(){this._id.className="oldStyle"}
-setAttributes(index){this._id.innerHTML=index; this._id.href="/#";this._id.setAttribute('id',index)}
+setAttributes(index){this._id.innerHTML=index;this._id.setAttribute('id',index)}
 getHidden(){this._id.hidden=true}
 getRevealed(){this._id.hidden=false}
 }
