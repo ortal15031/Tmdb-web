@@ -1,0 +1,204 @@
+:root{
+--black:#000000;
+--dark_gray:#262626;
+--light_gray:#696969;
+--green:#8FBC8F;
+--orange:#B8860B;
+--red:#A52A2A;
+--white:#FFFFFF;
+--light_blue:#87CEEB;
+--sky_blue:#e1f3fe;
+}
+
+body{
+margin: 0;
+padding-top:5%;
+background: var(--light_blue);
+}
+.search_class{
+margin-top: auto;
+position: fixed;
+font-family: 'Mouse Memoirs', sans-serif;
+background:var(--white);
+width: 100%;
+display: flex;
+justify-content:space-between;
+align-items: center;
+top: 0;
+padding: 30px,10px;;
+align-items: center;
+z-index: 1;
+box-shadow:  0px 0px 2.2px 1px rgb(0 0 0 / 30%);
+z-index: 10;
+}
+.main_elements{
+  display: flex;
+  justify-content: space-between;
+}
+.main_elements #title{
+ color:var(--light_blue) ;
+ margin-top: auto;
+ padding-left: 10px;
+ font-size: 35px;
+}
+.main_elements #logo{
+width: 45px;
+height: 45px;
+margin-left: 4px;
+}
+
+input{
+  position: relative;
+  color: var(--black);
+  border-radius: 25px 0 0 25px;
+  font-size: 17px;
+  transition: .5s;
+  min-height: 100%;
+  margin: 5px;
+}
+ #search_input{
+padding: 0.5rem;
+border:none;
+border-radius: 0.5px;
+border-radius: 25px 0 0 25px;
+border-width: 1px;
+outline: none;
+width: 170px;
+height: 24px;
+cursor: pointer;
+letter-spacing: 4px;
+background:var(--sky_blue);
+font-family: 'Mouse Memoirs', sans-serif;
+font-style:bold;
+text-align: 10px;
+}
+ #search_btn{
+position: relative;
+border-radius:0 30px 30px 0;
+border:none;
+outline: none;
+cursor: pointer;
+background: var(--black);
+left: -20px;
+width: 80px;
+height: 40px;
+font-family: 'Mouse Memoirs', sans-serif;
+color: var(--white);
+font-size: 17px;
+z-index: 1;
+}
+#search_btn:hover{
+background: var(--light_gray);
+box-shadow:  0px 0px 2.2px 1px rgb(0 0 0 / 20%);
+}
+#main{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin: :3rem;
+gap:17px;
+background-color: var(--light_blue);
+}
+.movie_element{
+font-family: 'Mouse Memoirs', sans-serif;
+position:relative;
+overflow:hidden;
+width: 300px;
+background-color: var(--white);
+margin-left: auto;
+margin-right: auto;
+margin-top: 0;
+margin-bottom: 13px;
+min-height: 100%;
+}
+.movie_element .poster{
+width: 100%;
+justify-content: center;
+}
+.movie_info{
+display: flex;
+align-items: center;
+justify-content: space-between;
+letter-spacing: 0.5px;
+margin: auto;
+margin-top: 1rem;
+}
+.movie_info .movie_name{
+text-align: center;
+font-size: 20px;
+color: var(--black);
+margin-left: 5px;
+margin-top: 0;
+}
+
+.movie_info span{
+ background-color: var(--dark_gray);
+ color: var(--white);
+ padding: 0.25rem 0.5rem;
+ border-radius: 2px;
+ font-weight:bold;
+}
+.movie_info span.green{
+color: var(--green) ;
+}
+.movie_info span.yellow{
+  color: var(--orange);
+}
+.movie_info span.red{
+  color: var(--red);
+}
+ .description{
+position:absolute;
+font-size: 17px;
+left:0;
+right: 0;
+bottom: 0;
+top: auto;
+padding:1rem;
+max-height: 100%;
+background-color: var(--white);
+color: var(--black);
+transform: translateY(101%);
+transition: transform 0.35s ease-in;
+}
+.movie_element:hover .description{
+  transform: translateY(0);
+}
+
+.paging_box{
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+gap:5px;
+align-items: center;
+text-align: center;
+padding: 0;
+margin: 30px;
+}
+
+button{
+  text-decoration: none;
+  color: inherit;
+}
+button:hover,button:focus{
+background: var(--black);
+color: var(--white);
+}
+.newStyle{
+text-decoration: none;
+font-family: 'Mouse Memoirs', sans-serif;
+color: var(--white);
+font-size: 20px;
+background: var(--black);
+padding:5px;
+margin: 2px;
+ }
+.oldStyle{
+text-decoration: none;
+font-family: 'Mouse Memoirs', sans-serif;
+color: var(--black);
+font-size: 20px;
+background: var(--white);
+padding:5px;
+margin: 2px;
+}
