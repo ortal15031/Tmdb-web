@@ -13,22 +13,20 @@ setAttributes(index){this._id.innerHTML=index;this._id.setAttribute('id',index)}
 getHidden(){this._id.hidden=true}
 getRevealed(){this._id.hidden=false}
 }
-const DEFAULT_PAGE=1;
-let current_page=1;
 const API_KEY="api_key=9b62c3eb4a6bc8acd4e26602f16fa744";
 const BASE_URL="https://api.themoviedb.org/3/";
 const MOVIE_URL=BASE_URL+"discover/movie?"+API_KEY+'&sort_by=popularity.desc';
 const IMAGE_URL="https://image.tmdb.org/t/p/w500";
 const SEARCH_URL=BASE_URL+"search/movie?"+API_KEY+"&sort_by=popularity.desc&query=";
 let pages=Array(0);
-let next=document.getElementById('next');
-let prev=document.getElementById('prev');
-let f=document.getElementById('search_movie');
+const next=document.getElementById('next');
+const prev=document.getElementById('prev');
+const f=document.getElementById('search_movie');
 const paging_parent=document.getElementById('paging_box');
 searchMovie();
 clickEvents();
 pushIntoArray(0);
-getMovies(MOVIE_URL,current_page);
+getMovies(MOVIE_URL,1);
 
 function getMovies(my_api,current_page){
   main.innerHTML=' ';
@@ -73,7 +71,7 @@ let user_input=document.getElementById('search_input').value;
 if(user_input&&user_input.trim()!=''){
 let query=SEARCH_URL+user_input;
 console.log(query);
-getMovies(query,DEFAULT_PAGE);
+getMovies(query,1);
 }
 
 })
@@ -131,10 +129,7 @@ element.id.addEventListener('click',(e)=>{
   e.stopPropagation();
 console.log(element);
 checkIfMarked();
-element.flag=1;
-element.getNewStyle();
-let current_page=element.id.innerText;
-getMovies(MOVIE_URL,current_page);
+getPageMarked(pages.indexOf(element),element.id.innerText);
 })})
 }
 function createNewPage(index){
@@ -159,8 +154,7 @@ return pages.findIndex(element=>element.flag==1) ?? null;
 function getPageMarked(index,last_index){
 pages[index].flag=1;
 pages[index].getNewStyle();
-current_page=last_index;
-getMovies(MOVIE_URL,current_page);
+getMovies(MOVIE_URL,last_index);
 }
 function checkIfMarked(){
 let index=searchLastIndex();
